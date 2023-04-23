@@ -5,7 +5,9 @@ import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadLess from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 
+import * as searchServices from '~/apiServices/searchServices';
 import { SearchIcon } from '~/components/Icons';
+import { useDebounce } from '~/hooks';
 import styles from './Search.module.scss';
 import AccountItem from '~/components/AccountItem';
 
@@ -17,33 +19,24 @@ function Search() {
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
 
+    const debounced = useDebounce(searchValue, 500);
+
     const inputRef = useRef();
 
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounced.trim()) {
             setSearchResult([]);
             return;
         }
-        let searchUrl = new URL(
-            'https://643d6554f0ec48ce905b408d.mockapi.io/users',
-        );
-        searchUrl.searchParams.set('q', searchValue);
 
-        setLoading(true);
-
-        fetch(searchUrl)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.slice(0, 5));
-                setLoading(false);
-            })
-            .catch((err) => {
-                setLoading(false);
-                console.log(err.message);
-            });
-
-        setLoading(false);
-    }, [searchValue]);
+        const fetchApi = async () => {
+            setLoading(true);
+            const result = await searchServices.search(debounced);
+            setSearchResult(result.slice(0, 4));
+            setLoading(false);
+        };
+        fetchApi();
+    }, [debounced]);
 
     const handleClear = () => {
         setSearchValue('');
