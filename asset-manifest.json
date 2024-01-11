@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/tictok-ui/static/css/main.b254f4f7.css",
-    "main.js": "/tictok-ui/static/js/main.a8e22adf.js",
+    "main.js": "/tictok-ui/static/js/main.07962cda.js",
     "static/js/787.013d6fc5.chunk.js": "/tictok-ui/static/js/787.013d6fc5.chunk.js",
     "static/media/Proxima-Nova-Regular.woff2": "/tictok-ui/static/media/Proxima-Nova-Regular.6c83037ae28747e6d774.woff2",
     "static/media/Proxima-Nova-Semibold.woff2": "/tictok-ui/static/media/Proxima-Nova-Semibold.c5632e80f6e35c93156f.woff2",
     "static/media/logo.svg": "/tictok-ui/static/media/logo.2680d7022f9ea77328980ebbbf458bdc.svg",
     "index.html": "/tictok-ui/index.html",
     "main.b254f4f7.css.map": "/tictok-ui/static/css/main.b254f4f7.css.map",
-    "main.a8e22adf.js.map": "/tictok-ui/static/js/main.a8e22adf.js.map",
+    "main.07962cda.js.map": "/tictok-ui/static/js/main.07962cda.js.map",
     "787.013d6fc5.chunk.js.map": "/tictok-ui/static/js/787.013d6fc5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b254f4f7.css",
-    "static/js/main.a8e22adf.js"
+    "static/js/main.07962cda.js"
   ]
 }
