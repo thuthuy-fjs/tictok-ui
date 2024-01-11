@@ -9,7 +9,7 @@ import Profile from '~/pages/Profile';
 // Public routes
 const publicRoutes = [
     { path: '/', component: Home },
-    { path: '/tiktok-ui', component: Home },
+    { path: '/tictok-ui', component: Home },
     { path: '/following', component: Following },
     { path: '/upload', component: Upload, layout: HeaderOnly },
     { path: '/@:nickname', component: Profile },
